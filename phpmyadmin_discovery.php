@@ -29,6 +29,18 @@ if ($domain === FALSE)
     show_error('Invalid domain. See examples!');
 }
 
+$standalones = [
+    'pma',
+    'php-myadmin',
+    'phpmy-admin',
+    'webadmin',
+    'sqlweb',
+    'websql',
+    'webdb',
+    'mysqladmin',
+    'mysql-admin',
+];
+
 $base_filenames = [
     'phpMyAdmin-'
 ];
@@ -298,6 +310,11 @@ $suffixed = [
 
 
 show_status('Starting scan');
+foreach ($standalones as $standalone)
+{
+    $full_url = $domain.'/'.$standalone.'/';
+    check_url($full_url, $verbose);
+}
 foreach ($base_filenames as $base_filename)
 {
     foreach ($versions as $version)
@@ -339,6 +356,7 @@ function check_url($url, $verbose = FALSE)
     curl_setopt($curlHandle, CURLOPT_HEADER, TRUE);
     curl_setopt($curlHandle, CURLOPT_FOLLOWLOCATION, TRUE);
     curl_setopt($curlHandle, CURLOPT_RETURNTRANSFER, TRUE);
+    curl_setopt($curlHandle, CURLOPT_USERAGENT, 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36');
     $response = curl_exec($curlHandle);
 
 //    print_r($response);die();
