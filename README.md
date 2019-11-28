@@ -8,8 +8,10 @@ Scan your own domains and if you find such a folder .. just rename it to a more 
 
 Enjoy!
 
+It needs php-curl extension so .. `sudo apt install php-curl` , if you have aptitude installed (Debian/Ubuntu/other flavors).
 
-------
+
+```
 Parameters:
 	'-h' shows this help
 	'-v' verbose, if missing will show just the folders that will return HTTP code 20X/30X
@@ -17,3 +19,4 @@ Parameters:
 Examples:
 	php phpmyadmin_discovery.php --domain=https://domain.com -v
 	php phpmyadmin_discovery.php --domain=http://42.42.42.42
+```
