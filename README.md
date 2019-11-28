@@ -10,16 +10,10 @@ Enjoy!
 
 
 ------
-
-----------------------------------------
-phpMyAdmin Discovery Script - https://github.com/nekhbet/phpmyadmin-discovery
-----------------------------------------
-[Parameters]
+Parameters:
 	'-h' shows this help
 	'-v' verbose, if missing will show just the folders that will return HTTP code 20X/30X
 	'--domain=DOMAIN_WITH_PROTOCOL' sets the base path (domain, eventually a path)
-[Examples]
+Examples:
 	php phpmyadmin_discovery.php --domain=https://domain.com -v
 	php phpmyadmin_discovery.php --domain=http://42.42.42.42
-----------------------------------------
-
