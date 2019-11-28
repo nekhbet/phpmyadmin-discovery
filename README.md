@@ -8,6 +8,8 @@ Scan your own domains and if you find such a folder .. just rename it to a more 
 
 Enjoy!
 
+----------------
+
 It needs php-curl extension so .. `sudo apt install php-curl` , if you have aptitude installed (Debian/Ubuntu/other flavors).
 
 
